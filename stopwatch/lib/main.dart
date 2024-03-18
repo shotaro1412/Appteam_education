@@ -31,9 +31,9 @@ class _StopwatchAppState extends State<StopwatchApp> {
   }
 
   void startTimer() {
-    timer = Timer.periodic(Duration(milliseconds: 1000), (Timer t) {
+    timer = Timer.periodic(Duration(milliseconds: 100), (Timer t) { 
       setState(() {
-        counter += 1.0;
+        counter += 0.1; 
       });
     });
   }
@@ -59,8 +59,8 @@ class _StopwatchAppState extends State<StopwatchApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Counter: ${counter.toStringAsFixed(1)}',
-              style: TextStyle(fontSize: 24.0),
+              '${counter.toStringAsFixed(1)}',
+              style: TextStyle(fontSize: 40.0),
             ),
             SizedBox(height: 20),
             Row(
