@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:convert';
 
-
 void main() {
   double counter = 0.0;
   bool isRunning = false;
@@ -17,7 +16,6 @@ void main() {
           print('Start');
           timer = Timer.periodic(Duration(milliseconds: 1000), (Timer t) {
             counter += 1.0;
-            print('Counter: $counter\n 1 satrt |2 stop |3 restart');
           });
           isRunning = true;
         }
@@ -27,7 +25,18 @@ void main() {
           print('Pause');
           timer?.cancel();
           isRunning = false;
-          print('Elapsed time: $counter\n 1 satrt |2 stop |3 restart');
+          print('Elapsed time: $counter\n 1 start |2 stop |3 restart');
+        }
+        break;
+      case '3':
+        // Restart
+        if (!isRunning) {
+          counter = 0.0;
+          print('Restart');
+          timer = Timer.periodic(Duration(milliseconds: 1000), (Timer t) {
+            counter += 1.0;
+          });
+          isRunning = true;
         }
         break;
       default:
