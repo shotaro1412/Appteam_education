@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:stopwatch/main.dart';
+import 'package:stopwatch/setstate%E7%89%88';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
